@@ -1,0 +1,45 @@
+body {
+    margin: 1rem 1rem 0 1rem;
+    padding: 0;
+    box-sizing: border-box;
+    background: black;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.grid-container {
+    font-size: 2rem;
+    text-align: center;
+    border: solid 1px;
+    margin: 0 1em;
+    display: grid;
+    
+    grid-template-areas:
+        "nav"        
+        "article"
+        
+    ;
+/* DISTANCIA ENTRE LOS BORDES Y EL NAV ITEM1 */
+    gap: .0em .4em;
+}
+
+.item1 {
+    
+    grid-area: nav;
+    background: greenyellow;
+
+}
+
+.article{
+    display: flex;
+    justify-content: center;
+    color: white;
+    height: 100px;
+    line-height: 50px;
+    text-align: center;        
+    
+}
+

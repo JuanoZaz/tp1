@@ -1,0 +1,48 @@
+body {
+    margin: 1rem 1rem 0 1rem;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+.grid-container {
+    background: black;
+    font-size: 2rem;
+    text-align: center;
+    border: solid 1px;
+    margin: 0 0em;
+    display: grid;
+    /*grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 0.5fr repeat(4, 2fr) 100px;*/
+    grid-template-areas:
+        "main main main main"
+        "article1 article2 article3 article4"        
+        "footer footer footer footer"
+    ;
+    
+    gap: .0em .4em;
+}
+
+.item1 {   
+
+    grid-area: main;
+    color: white;
+    background: black
+   
+    
+}
+
+.videos{
+    margin-top: 50px ;
+    margin-left: 400px;
+    color: white;
+
+}
+
+
+

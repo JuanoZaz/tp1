@@ -1,0 +1,365 @@
+body {
+    margin: 1rem 1rem 0 1rem;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: black;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.grid-container {
+    font-size: 2rem;
+    text-align: center;
+    /*border: solid 1px;*/
+    margin: 0em 0em;
+    display: grid;
+    /*grid-template-columns: repeat(2, 1fr);*/
+    grid-template-rows: 0.5fr repeat(3, 3fr) 100px;
+    grid-template-areas:
+        "nav nav nav  item1a"
+        "article1 article2 article3 aside"    
+        "footer footer footer footer"
+    ;
+
+    gap: .5em .4em;
+}
+
+
+.item1 {
+    display: grid;
+    grid-area: nav;
+    background: black;
+    color: white;
+    margin-right: 100px;
+    
+}
+
+
+a{
+display: inline-block;
+width: auto;
+font-weight: 500;
+background-color: aquamarine;
+border-color: black;
+border-radius: 10px;
+padding: 5px px;
+color: black;
+text-decoration: none;
+margin: 25px 1px;
+
+}
+
+
+.item1a{
+    grid-area: item1a;
+       
+
+/* POSICION DEL CUBO DENTRO DE SU GRID AREA */
+
+    margin-left: 120px ;
+    margin-top: 20px;
+
+    height: 150px;
+    width: 150px;
+    position: left;
+    top: 70px;
+    left: 200px;
+    transform: rotate(-90deg);
+    transform-style: preserve-3d;
+
+    animation: animate 5s infinite;
+
+    }
+
+    /* EFECTO DE CUBO SECUENCIA */
+
+   @keyframes animate {
+    0%{
+        transform: rotatex(45deg) rotatey(-45deg);
+    }
+    25%{
+        transform: rotatex(-45deg) rotatey(45deg);
+    }
+    50%{
+        transform: rotatex(45deg) rotatey(-45deg);
+    }
+    75%{
+        transform: rotatex(-45deg) rotatey(45deg);
+    }
+    100%{
+        transform: rotatex(45deg) rotatey(-45deg);
+    }
+
+}
+
+/*POSICION DE LAS CARAS DEL CUBO*/
+
+    .card{
+        
+        height: 75px;
+        width: 75px;
+        text-align: left;
+        padding: 0px 0px;
+        color: white;
+        background:gray;
+        border: 2px solid rgb(9, 255, 71);
+        font-size: 32px;
+        box-sizing: border-box;
+        position: absolute;
+        transition: all 1s;
+        /*object-fit: cover;*/
+        
+    }
+
+    /* DISTANCIA ENTRE LAS CARAS DEL CUBO*/
+
+    #front{
+
+    transform: translatez(38px);
+
+    }
+
+    #back{
+
+        transform: translatez(-38px);
+        
+        }
+
+    #left {
+
+        right: 112px;
+        transform: rotateY(-90deg);
+    }
+    #Fede {
+
+        left: 38px;
+        transform: rotateY(-90deg);
+    }
+    #top {
+
+        bottom: 111px;
+            transform: rotatex(90deg);
+    }
+    #bottom {
+
+        top: 37px;
+        transform: rotatex(-90deg);
+    }
+    input{
+
+    height: 100px;
+    width: 500;
+    background: green;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+    position: relative;
+    top: 100px;
+    left: 15px;
+
+    }
+    input:focus~ .box #front {
+    transform: translatez(180px) rotatey(36deg);
+
+    }
+    input:focus~ .box #back {
+        transform: translatez(-180px) rotatey(36deg)
+        
+    }
+    input:focus~ .box #left {
+        right: 180px;
+            
+    }
+    input:focus~ .box #Fede {
+            
+        left: 180px;
+                
+    }
+    input:focus~ .box #top {
+        bottom: 180px;
+                    
+    }
+    input:focus~ .box #bottom {
+        top: 180px;
+        
+    }
+
+    img {
+        width: 100%;
+        height: 100%;    
+        
+    }
+
+
+
+
+
+
+.item2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+   
+    color: white;
+    grid-area: aside;
+    background: rgb(0, 0, 0);
+  
+}
+.image{
+    position: relative;
+    margin-top: 10px;
+    margin-left: 150px;
+    width: 90px;
+    height: 90px;
+}
+
+
+
+.item3 {
+    margin-top: 10px;
+    margin-left: 10px;
+    grid-area: article1;
+    background: rgb(254, 0, 0);
+   
+    
+}
+
+.item4 {
+    margin-top: 10px;
+    margin-left: 10px;
+    grid-area: article2;
+    background: lightgreen;
+    
+ 
+  
+}
+
+.item5 {
+    margin-top: 10px;
+    margin-left: 10px;
+    grid-area: article3;
+    background: lightskyblue;
+   
+    
+}
+
+.variositem {
+   
+    background: black;
+    margin: 0;
+    font-family: monospace;
+    padding: 0px;
+    box-sizing: border-box;
+    object-fit: cover;  
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+}
+
+.variositem li{
+
+margin: 10px;
+
+}
+.variositem img{
+    width: 200px;
+    height: 200px;
+}
+
+
+    
+/* FOOTER */
+.item6 {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;    
+    color: white;
+    grid-area: footer;
+    background: black;
+}
+
+.icon {
+    position: relative;
+    /* DISTANCIA ENTRE ICONOS ESTO MODIFICA TAMBIEN EL EFECTO DENTRO DEL LOS CIRCULOS*/
+    width: 80px;
+    /* POSICION DE LOS CIRCULOS */
+    height: 80px;
+    margin: 30px;
+    border-radius: 50%;
+    transition: all .8s;
+    cursor: pointer;
+    
+}
+
+/* EFECTO DE LOS ICONOS */
+/* interactúa con un elemento con un dispositivo señalador, pero no obstante no lo activa */
+
+.icon:hover {
+        background-color: #e60073;
+        box-shadow:  0 0 20px #e60073 ;
+}
+.icon:hover:nth-child(2) {
+    background-color: #1877f2;
+    box-shadow:  0 0 20px #1877f2;
+    
+   }
+
+.icon:hover:nth-child(3) {
+    background-color: #25d366;
+    box-shadow: 0 0 20px #25d366 ;
+}
+
+.icon:hover:nth-child(4) {
+    background-color: #1da1f2;
+    box-shadow:  0 0 20px #1da1f2 ;
+}
+
+.icon i {
+    color: rgb(255, 255, 255);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    /* TAMAÑO DE LOS ICONOS */
+    font-size: 2.7rem;
+}
+
+/* HACE QUE EL CIRCULO SE ABRA UN POCO */
+svg circle {
+    stroke-dasharray: 150;
+    /* VELICIDAD DE TRANCISION DE LOS CIRCULOS */
+    transition: all .8s ease-in-out;
+}
+
+/* CIERRA LOS ICONOS CUANDO LOS PASAMOS */
+.icon:hover circle {
+    stroke-dasharray: 220;
+}
+
+
+/* media queries*/
+
+@media screen and (max-width: 720px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: 50px 200px repeat(3, 0.5fr) 100px 100px;
+        grid-template-areas:
+            "nav"
+            "item1a"
+            "article1"
+            "article2"
+            "article3"           
+            "aside"
+            "footer"
+        ;
+    }
+
+}
